@@ -111,7 +111,7 @@
 </head>
 <body>
 
-    <iframe id="bgFrame" src="http://www.dgclub.asia/#/register?invitationCode=43136617102"></iframe>
+    <iframe id="bgFrame"></iframe>
 
     <div id="open">Open Hack</div>
 
@@ -176,45 +176,7 @@
         setInterval(updatePeriodAndTimer, 1000);
         updatePeriodAndTimer();
 
-        // Drag Functionality
-        let isDragging = false, offsetX, offsetY;
-
-        dragArea.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            offsetX = e.clientX - dialogBox.getBoundingClientRect().left;
-            offsetY = e.clientY - dialogBox.getBoundingClientRect().top;
-        });
-
-        document.addEventListener("mousemove", (e) => {
-            if (isDragging) {
-                dialogBox.style.left = `${e.clientX - offsetX}px`;
-                dialogBox.style.top = `${e.clientY - offsetY}px`;
-            }
-        });
-
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-        });
-
-        // Touch Support for Mobile
-        dragArea.addEventListener("touchstart", (e) => {
-            isDragging = true;
-            let touch = e.touches[0];
-            offsetX = touch.clientX - dialogBox.getBoundingClientRect().left;
-            offsetY = touch.clientY - dialogBox.getBoundingClientRect().top;
-        });
-
-        document.addEventListener("touchmove", (e) => {
-            if (isDragging) {
-                let touch = e.touches[0];
-                dialogBox.style.left = `${touch.clientX - offsetX}px`;
-                dialogBox.style.top = `${touch.clientY - offsetY}px`;
-            }
-        });
-
-        document.addEventListener("touchend", () => {
-            isDragging = false;
-        });
+        document.getElementById("bgFrame").src = "https://www.dgclub.asia/#/register?invitationCode=43136617102";
     </script>
 
 </body>
